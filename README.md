@@ -9,4 +9,4 @@ nên tôi chỉ lấy thư mục "src" thôi.
 5. Liên kết dữ liệu của file .ts với file .html, ví dụ: <p>{{ message }}</p>
 6. Sử dụng các thuộc tính có sẵn như [id], [style.color], [disabled], (click)
 7. Sử dụng chỉ thị (directive), ví dụ: ngIf.
-8. Kỹ năng chèn phụ thuộc (Dependency injection)<p>nó như kiểu tạo 1 lớp và viết các phương thức tự định nghĩa để cho lớp khác sử dụng.</p>
+8. Kỹ năng chèn phụ thuộc (Dependency injection)<p>nó như kiểu tạo 1 lớp và viết các phương thức tự định nghĩa để cho lớp khác sử dụng.</p><p>ví dụ: tạo ra file logger.service.ts sau đó tạo lớp Logger.</p>
