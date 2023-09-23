@@ -8,6 +8,5 @@ nên tôi chỉ lấy thư mục "src" thôi.
 4. Sử dụng bộ trang trí "decorator", cụ thể là @Component().
 5. Liên kết dữ liệu của file .ts với file .html, ví dụ: <p>{{ message }}</p>
 6. Sử dụng các thuộc tính có sẵn như [id], [style.color], [disabled], (click)
-<p>[id]="id_01"</p>
-<p>{{ message }}</p>
-<p>{{ message }}</p>
+7. Sử dụng chỉ thị (directive), ví dụ: ngIf.
+8. Kỹ năng chèn phụ thuộc (Dependency injection), nó như kiểu tạo 1 lớp và viết các phương thức tự định nghĩa để cho lớp khác sử dụng.
