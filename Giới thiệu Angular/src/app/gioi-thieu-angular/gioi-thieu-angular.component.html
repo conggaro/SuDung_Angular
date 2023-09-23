@@ -1,0 +1,127 @@
+<!-- đây là tính năng liên kết dữ liệu -->
+<h2>
+    {{ message }}
+</h2>
+
+<br>
+
+<!--
+    đây là tính năng
+    thiết lập giá trị
+    cho thuộc tính của thẻ HTML
+
+    bạn đang sử dụng các thuộc tính
+    được viết trong lớp
+-->
+<h2
+    [id]="id_01"
+    [style.color]="mau_sac"
+    [style.fontFamily]="kieu_chu"
+>
+    {{ message }}
+</h2>
+
+
+<!-- 
+    khai báo trình xử lý sự kiện
+    khi người dùng click chuột
+-->
+<button
+    [type]="kieu_NutNhan"
+    [disabled]="trangThai_VoHieuHoa"
+    (mousedown)="ThongBao()"
+>
+    Bấm chuột vào đây để hiện thông báo
+</button>
+
+<br><br><br><br><br>
+
+<!--
+    trong Angular
+    thì nó có cái gọi là directive
+    dịch ra là "chỉ thị"
+    
+    các directive được dùng nhiều nhất
+    là ngIf và ngFor
+-->
+<button
+    [type]="kieu_NutNhan"
+    (click)="onEditClick()"
+>
+    Nhấn để đổi trạng thái
+</button>
+
+<h2
+    [contentEditable]="canEdit"
+>
+    {{ message2 }}
+</h2>
+
+<div
+    [style.width]="chieu_rong"
+    [style.height]="chieu_cao"
+    [style.border]="duong_vien()"
+>
+
+    <button
+        [type]="kieu_NutNhan"
+        (click)="doi_TrangThai_DoanVan()"
+    >
+        Bấm vào đây để hiển thị đoạn văn
+    </button>
+
+    <!--
+        vẫn phải cần 1 thẻ div
+        để viết câu lệnh ngIf bên trong
+    -->
+    <div
+        *ngIf="trang_thai_DoanVan == true;
+        then anDoanVan;
+        else doanVan"
+    >
+    </div>
+
+    <!-- tạo thẻ ẩn đoạn văn -->
+    <ng-template #anDoanVan>
+        <h2>
+            Đã ẩn đoạn văn
+        </h2>
+    </ng-template>
+
+    <!-- tạo thẻ đoạn văn -->
+    <ng-template #doanVan>
+        <h2>
+            Đã hiển thị đoạn văn
+        </h2>
+    </ng-template>
+</div>
+
+
+<!--
+    dependency injection
+    là tính năng chèn phụ thuộc
+    
+    cho phép bạn khai báo các phần phụ thuộc
+    của các lớp TypeScript
+    mà không cần quan tâm đến việc khởi tạo chúng
+
+    thay vào đó, Angular xử lý việc khởi tạo cho bạn
+
+    mẫu thiết kế này cho phép bạn viết mã linh hoạt
+    và dễ kiểm tra hơn
+
+    để sử dụng tính năng chèn phụ thuộc
+    thì bạn phải thêm thư viện Injectable
+
+    bước 1:
+    tạo ra file "logger.service.ts"
+-->
+
+<br><br>
+
+<button
+    [type]="kieu_NutNhan"
+    (mousedown)="onLogMe()"
+>
+    Nhấn vào đây để gọi phương thức onLogMe()
+</button>
