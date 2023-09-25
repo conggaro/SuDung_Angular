@@ -1,0 +1,43 @@
+<!--
+  học điều hướng routing trong Angular
+
+  đầu tiên, bạn phải vào file "app-routing.module.ts"
+  để viết code
+-->
+<ul>
+  <li>
+    <a
+      routerLink="/trang-so1"
+      routerLinkActive="active"
+    >
+      <h1>Trang 01</h1>
+    </a>
+  </li>
+
+  <li>
+    <a
+      routerLink="/trang-so2"
+      routerLinkActive="active"
+    >
+      <h1>Trang 02</h1>
+    </a>
+  </li>
+</ul>
+
+<br>
+
+<!--
+  bây giờ, muốn hiển thị trang đã
+  được thiết lập điều hướng
+  thì phải dùng thẻ <router-outlet>
+-->
+<div
+  [style.width]="chieu_rong"
+  [style.height]="chieu_cao"
+  [style.border]="duong_vien"
+  [style.boxSizing]="kich_thuoc_hop"
+>
+  <!-- gọi thẻ "router-outlet" -->
+  <router-outlet>
+  </router-outlet>
+</div>
