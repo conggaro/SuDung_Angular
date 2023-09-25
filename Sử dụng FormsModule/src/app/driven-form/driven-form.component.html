@@ -1,0 +1,29 @@
+<form (ngSubmit)="submitForm()">
+    <label for="ho-ten">Nhập họ tên: </label>
+    
+    <input
+        id="ho-ten"
+        type="text"
+        [(ngModel)]="name"
+        [ngModelOptions]="{ standalone: true}"
+    >
+
+    <br>
+
+    <label for="tuoi">Nhập tuổi: </label>
+
+    <!-- thuộc tính standalone nghĩa là độc lập -->
+    <input
+        id="tuoi"
+        type="number"
+        [(ngModel)]="age"
+        [ngModelOptions]="{ standalone: true}"
+    >
+
+    <!-- cách 1: viết sự kiện trên button -->
+    <!-- <button (click)="submitForm()">Submit</button> -->
+    
+    <!-- cách 2: viết sự kiện trên thẻ form -->
+    <br>
+    <button>Submit</button>
+</form>
