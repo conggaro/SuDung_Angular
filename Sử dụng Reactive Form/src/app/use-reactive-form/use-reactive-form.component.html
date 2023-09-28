@@ -1,0 +1,63 @@
+<h1>Sử dụng Reactive Form</h1>
+
+<br>
+
+<h2>Các công cụ sử dụng</h2>
+<ul>
+    <li>
+        <h3>Cách 1: Sử dụng "FormGroup" và "FormControl".</h3>
+    </li>
+
+    <li>
+        <h3>Cách 2: Sử dụng "FormBuilder".</h3>
+    </li>
+</ul>
+
+<br><br>
+
+<form [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <label for="ho-ten">Họ tên: </label>
+    <input id="ho-ten" type="text" formControlName="name">
+    
+    <!-- viết câu lệnh điều kiện ngIf -->
+    <div
+        *ngIf="!(formData.controls.name.valid)"
+        [style]="'color: red'"
+    >
+        Yêu cầu nhập họ tên
+    </div>
+    
+    <br>
+
+    <label for="tuoi">Tuổi: </label>
+    <input id="tuoi" type="text" formControlName="age">
+
+    <!-- viết câu lệnh điều kiện ngIf -->
+    <div
+        *ngIf="!(formData.controls.age.valid)"
+        [style]="'color: red'"
+    >
+        Yêu cầu nhập tuổi
+    </div>
+
+    <br>
+
+    <!--
+        khi tất cả textbox
+        được xác nhận (validate)
+        thì formData.valid = true
+
+        nhưng formData.valid = true
+        thì cái [disabled]=true
+        dẫn đến không bấm được vào button
+
+        do đó, chúng ta sẽ viết code
+        là [disabled]="!(formData.valid)"
+    -->
+    <button
+        type="submit"
+        [disabled]="!(formData.valid)"
+    >
+        Submit
+    </button>
+</form>
