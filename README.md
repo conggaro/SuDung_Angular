@@ -17,6 +17,6 @@ nên tôi chỉ lấy thư mục "src" thôi.
 2. tạo component mới: ng generate component <tên_component>
 3. tạo service mới: ng generate service <tên_service>
 <br>
-Chú ý:
+Chú ý:<br>
 1. Sử dụng "Command Prompt" để nhập các lệnh, sử dụng "PowerShell" thì hay bị báo lỗi lắm.
 2. Nếu bạn muốn điều hướng đến thư mục trong Angular, thì bạn mở "Command Prompt" và sử dụng câu lệnh "cd".
