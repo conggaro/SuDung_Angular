@@ -11,6 +11,11 @@ export class PhanTuBComponent {
   constructor(private cService: DichVuService) { }
 
   handleButtonClick(e: any) {
+    // cái tham số e
+    // có kiểu dữ liệu là PointerEvent
+
+    debugger;
+
     this.cService.buttonSubject.next(e);
   }
 }

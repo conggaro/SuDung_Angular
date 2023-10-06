@@ -12,7 +12,12 @@ export class PhanTuAComponent {
 
   ngOnInit() {
     this.cService.buttonObservable.subscribe(e => {
-      console.log('GET api');
+      // cái tham số e
+      // có kiểu dữ liệu là PointerEvent
+      
+      debugger;
+
+      console.log('Đã bắt được sự kiện (Phần tử A)');
     });
   }
 }

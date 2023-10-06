@@ -10,6 +10,8 @@ export class DichVuService {
   public buttonSubject: Subject<any> = new Subject();
   
   // khai báo thuộc tính
+  // có tác dụng theo dõi sự kiện
+  // khi có sự thay đổi
   public buttonObservable = this.buttonSubject.asObservable();
 
   constructor() { }
