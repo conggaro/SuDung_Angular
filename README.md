@@ -12,3 +12,11 @@ nên tôi chỉ lấy thư mục "src" thôi.
 8. Kỹ năng chèn phụ thuộc (Dependency injection)<p>nó như kiểu tạo 1 lớp và viết các phương thức tự định nghĩa để cho lớp khác sử dụng.</p><p>ví dụ: tạo ra file logger.service.ts sau đó tạo lớp Logger.</p>
 9. Những thư viện có thể dùng Router, Forms, HttpClient, Animations, PWA, Schematics.
 10. Sản phẩm mà Angular mong muốn tạo ra là "ứng dụng đơn trang" SPA - Single Page Application.
+# Những câu lệnh trong Angular
+1. tạo dự án mới: ng new <tên_dự_án>
+2. tạo component mới: ng generate component <tên_component>
+3. tạo service mới: ng generate service <tên_service>
+<br>
+   ú ý:
+1. Sử dụng "Command Prompt" để nhập các lệnh, sử dụng "PowerShell" thì hay bị báo lỗi lắm.
+2. Nếu bạn muốn điều hướng đến thư mục trong Angular, thì bạn mở "Command Prompt" và sử dụng câu lệnh "cd".
