@@ -20,4 +20,5 @@ nên tôi chỉ lấy thư mục "src" thôi.
 Chú ý:
 <br>
 1. Sử dụng "Command Prompt" để nhập các lệnh, sử dụng "PowerShell" thì hay bị báo lỗi lắm.
+<br>
 2. Nếu bạn muốn điều hướng đến thư mục trong Angular, thì bạn mở "Command Prompt" và sử dụng câu lệnh "cd".
