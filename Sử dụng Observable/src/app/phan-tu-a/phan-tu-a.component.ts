@@ -8,7 +8,12 @@ import { DichVuService } from '../Services/dich-vu.service';
 })
 
 export class PhanTuAComponent {
-  constructor(private cService: DichVuService) { }
+  public hienThi: number = 0;
+
+  constructor(
+    private cService: DichVuService,
+    private doi_tuong: DichVuService
+  ) { }
 
   ngOnInit() {
     this.cService.buttonObservable.subscribe(e => {
@@ -18,6 +23,10 @@ export class PhanTuAComponent {
       debugger;
 
       console.log('Đã bắt được sự kiện (Phần tử A)');
+
+      this.doi_tuong.dem$.subscribe((pointerEvent: any) => {
+        this.hienThi = pointerEvent;
+      });
     });
   }
 }
