@@ -22,6 +22,7 @@ Chú ý:
 1. Sử dụng "Command Prompt" để nhập các lệnh, sử dụng "PowerShell" thì hay bị báo lỗi lắm.
 <br>
 2. Nếu bạn muốn điều hướng đến thư mục trong Angular, thì bạn mở "Command Prompt" và sử dụng câu lệnh "cd".
+
 # Two way binding
 1. Property binding.
 2. Event binding.
