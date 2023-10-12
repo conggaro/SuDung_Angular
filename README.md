@@ -24,6 +24,6 @@ Chú ý:
 2. Nếu bạn muốn điều hướng đến thư mục trong Angular, thì bạn mở "Command Prompt" và sử dụng câu lệnh "cd".
 
 # Two way binding
-1. Property binding.
-2. Event binding.
+1. Property binding (Từ Model cập nhật lên View).
+2. Event binding (Từ View gửi sự kiện về Model).
 3. Inputs and Outputs.
