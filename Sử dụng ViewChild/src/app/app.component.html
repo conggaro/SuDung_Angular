@@ -1,0 +1,66 @@
+<h1>Sử dụng ViewChild</h1>
+
+<ul>
+    <li>
+        Bạn muốn gọi đến Template variable
+        <br>
+        ở trong class (của một component).
+    </li>
+
+    <li>
+        Thì bạn sử dụng ViewChild.
+    </li>
+
+    <li>
+        Nếu bạn sử dụng ViewChild cho một HTMLElement
+        <br>
+        thì chúng ta sẽ nhận được một "ElementRef"
+        <br>
+        thay vì một HTMLElement như sử dụng ở trong template.
+    </li>
+
+    <li>
+        Đối với thuộc tính static trong biến ViewChild
+        <br>
+        nếu "selector" không nằm trong if/else
+        <br>
+        hay một structure directive nào
+        <br>
+        thì chúng ta có thể gọi nó là "static: true"
+    </li>
+
+    <li>
+        Tức là nó không thay đổi trong suốt thời gian sống của component.
+    </li>
+
+    <li>
+        Lúc này Angular (v9 trở lên) sẽ chạy phần "resolve query result"
+        <br>
+        trước khi chạy Change Detection
+        <br>
+        nên chúng ta có thể truy cập nó ở trong "ngOnInit".
+    </li>
+
+    <li>
+        nếu "static: false" (giá trị mặc định)
+        <br>
+        thì tiến trình trên sẽ chạy
+        <br>
+        sau khi chạy Change Detection
+        <br>
+        nên bạn không thể dùng nó ở "ngOnInit()"
+        <br>
+        mà phải chạy ở "ngAfterViewInit()"
+    </li>
+</ul>
+
+
+<section>
+    <div #template_variable_div_1>Thẻ div 1</div>
+
+    <br>
+    <div #template_variable_div_2>Thẻ div 2</div>
+
+    <br>
+    <app-phan-tu-con #template_variable_PhanTuCon></app-phan-tu-con>
+</section>
