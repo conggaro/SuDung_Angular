@@ -1,0 +1,100 @@
+body{
+    position: relative;
+
+    z-index: 1;
+}
+
+section.sec_1{
+    position: absolute;
+    top: 25px;
+    left: 900px;
+
+    z-index: 2;
+}
+
+li {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+input[placeholder="Số điện thoại"] {
+    width: 240px;
+    height: 45px;
+    font-size: 25px;
+    box-sizing: border-box;
+
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+#btn_submit {
+    width: 120px;
+    height: 45px;
+    box-sizing: border-box;
+
+    position: relative;
+    top: -4px;
+    left: 10px;
+}
+
+section.sec_2{
+    position: absolute;
+    top: 240px;
+    left: 900px;
+
+    z-index: 2;
+}
+
+/* sử dụng selector css cha-con */
+form > label {
+    display: inline-block;
+    width: 100px;
+    font-size: 20px;
+}
+
+form > input {
+    font-size: 20px;
+}
+
+div.ketQua {
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 27px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+pre {
+    margin: 0px;
+}
+
+div.ketQua_binding {
+    margin-top: 80px;
+}
+
+div.ketQua > pre {
+    font-size: 20px;
+}
+
+div.ketQua > p {
+    font-size: 20px;
+}
+
+span {
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+    lấy tất cả thẻ p
+    có đặc điểm
+    thẻ p là con của thẻ div
+ */
+div.ketQua_binding > p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    font-size: 20px;
+}

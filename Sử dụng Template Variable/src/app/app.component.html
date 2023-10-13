@@ -1,0 +1,81 @@
+<h1>Sử dụng Template Variable</h1>
+<ul>
+  <li>
+    Template Variable: là biến Template
+  </li>
+
+  <li>
+    Template Variable được khai báo với ký hiệu băm "#"
+  </li>
+
+  <li>
+    Ví dụ khai báo Template Variable: #phone
+  </li>
+
+  <li>
+    Biến "Template Variable" có thể tham chiếu đến phần tử HTML
+  </li>
+
+  <li>
+    Biến "Template Variable" có thể tham chiếu đến Component của Angular
+  </li>
+
+  <li>
+    Biến "Template Variable" có thể tham chiếu đến chỉ thị (directive)
+    <br>
+    mà "directive" lại trỏ đến thuộc tính của 1 phần tử HTML
+    <br>
+    ví dụ: "directive" trỏ đến thuộc tính style.background
+  </li>
+</ul>
+
+
+<section class="sec_1">
+  <input type="text" placeholder="Số điện thoại" #phone>
+  <button id="btn_submit" (click)="su_kien(phone)">Gửi</button>
+  
+  <p>Giá trị (truyền từ Model lên View): {{ hien_thi }} </p>
+
+  <p>Phần tử lấy được: {{ hien_thi2 }} </p>
+</section>
+
+
+<section class="sec_2">
+  <!-- itemForm là một "template variable" -->
+  <form
+    #itemForm="ngForm"
+    (ngSubmit)="onSubmit(itemForm)"
+  >
+    <label for="lb_1">Họ tên: </label>
+    <input type="text" name="ho_ten" [ngModel]="gia_tri" id="lb_1" />
+
+    <br>
+    <label for="lb_2">Tuổi: </label>
+    <input type="number" name="tuoi" [(ngModel)]="gia_tri2" id="lb_2" />
+    
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+
+
+  <div class="ketQua">
+    <!-- 
+      thẻ pre được sử dụng
+      để chỉ phần văn bản
+      đã được định dạng trước
+    -->
+    <h3>Đối tượng <span>itemForm</span>:</h3>
+    <pre>{{ itemForm.value | json }}</pre>
+    
+    <p>Thuộc tính <span>ho_ten</span> của đối tượng <span>itemForm</span>: {{ itemForm.value.ho_ten }} </p>
+    <p>Thuộc tính <span>tuoi</span> của đối tượng <span>itemForm</span>: {{ itemForm.value.tuoi }} </p>
+  </div>
+
+
+  <div class="ketQua_binding">
+    <h3 style="margin-bottom: 10px;">Ràng buộc, bó buộc (binding)</h3>
+    <p>Đây là binding 1 chiều (Model ra View): {{ gia_tri }} </p>
+
+    <p>Đây là binding 2 chiều (Model ra View, rồi lại từ View về Model): {{ gia_tri2 }} </p>
+  </div>
+</section>
