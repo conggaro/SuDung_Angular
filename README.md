@@ -41,3 +41,8 @@ Chú ý:
 3. Cụ thể: khi biến su_kien gọi phương thức emit()
 4. Thì thẻ <app-phan-tu-con> sẽ tự động gọi phương thức Them_PhanTu_Cho_Mang()
 5. Phần tử con thì phát sự kiện, phần tử cha thì đăng ký nhận sự kiện.
+
+# Sử dụng toán tử phủ định "!"
+1. public status: boolean = true;
+2. console.log(!this.status); thì kết quả là "false"
+3. console.log(!!this.status); thì kết quả là "true"
