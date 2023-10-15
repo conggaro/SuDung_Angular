@@ -1,0 +1,42 @@
+<h3>Đây là phần tử con</h3>
+
+
+<label for="inp-01">
+    Thêm 1 item:
+</label>
+
+
+<input
+    type="text"
+    id="inp-01"
+    #template_variable_inp
+>
+
+
+<!--
+    cái #template_variable_inp
+    được gọi là "template variable"
+
+    nó là 1 biến
+    và nó lưu trữ giá trị
+    là cái "thẻ input"
+-->
+
+
+<button
+    type="button"
+    (click)="ThemMoi_Item(template_variable_inp.value)"
+
+    [style.marginLeft]="'10px'"
+>
+    <!-- 
+        khi bạn click vào button
+        thì nó sẽ gọi ThemMoi_Item()
+
+        khi bạn muốn lấy giá trị
+        trong thẻ input
+        thì bạn sử dụng "template_variable_inp.value"
+    -->
+
+    Submit
+</button>
