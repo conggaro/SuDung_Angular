@@ -33,4 +33,4 @@ Chú ý:
 2. Nó có tác dụng truyền dữ liệu từ "component cha" đến "component con".
 3. Cụ thể: truyền dữ liệu "Nguyễn Văn A" từ HTML của "component cha" đến file TypeScript của "component con".
 4. Cái biến ho_ten trong TypeScript của "component con" nhận được "Nguyễn Văn A".
-5. Thì bạn có thể {{ ho_tem }} ở HTML hoặc console.log() tùy ý.
+5. Thì bạn có thể {{ ho_ten }} ở HTML hoặc console.log() tùy ý.
