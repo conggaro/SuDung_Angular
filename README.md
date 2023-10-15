@@ -34,3 +34,10 @@ Chú ý:
 3. Cụ thể: truyền dữ liệu "Nguyễn Văn A" từ HTML của "component cha" đến file TypeScript của "component con".
 4. Cái biến ho_ten trong TypeScript của "component con" nhận được "Nguyễn Văn A".
 5. Thì bạn có thể {{ ho_ten }} ở HTML hoặc console.log() tùy ý.
+
+# Sử dụng @Output
+1. @Output() là một bộ trang trí (decorator).
+2. Nó có tác dụng phát sự kiện từ "component con" đến "component cha".
+3. Cụ thể: khi biến su_kien gọi phương thức emit()
+4. Thì thẻ <app-phan-tu-con> sẽ tự động gọi phương thức Them_PhanTu_Cho_Mang()
+5. Phần tử con thì phát sự kiện, phần tử cha thì đăng ký nhận sự kiện.
