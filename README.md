@@ -27,3 +27,8 @@ Chú ý:
 1. Property binding (từ Model cập nhật lên View).
 2. Event binding (từ View gửi sự kiện về Model).
 3. Inputs and Outputs.
+
+# Sử dụng @Input
+1. @Input() là một bộ trang trí (decorator).
+2. Nó có tác dụng truyền dữ liệu từ "component cha" đến "component con".
+3. Cụ thể: truyền dữ liệu "Nguyễn Văn A" từ HTML của "component cha" đến file TypeScript của "component con".
