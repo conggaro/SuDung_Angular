@@ -1,0 +1,36 @@
+<h1>Sử dụng @Output</h1>
+
+
+<!-- 
+  khi biến "su_kien"
+  gọi phương thức emit()
+
+  thì có tín hiệu
+  đến thẻ <app-phan-tu-con>
+
+  thẻ <app-phan-tu-con>
+  nhận được tín hiệu
+  thì tự động
+  gọi phương thức Them_PhanTu_Cho_Mang()
+
+  ở trong code TypeScript
+  của PhanTuConComponent
+-->
+<app-phan-tu-con
+  (su_kien)="Them_PhanTu_Cho_Mang($event)"
+>
+</app-phan-tu-con>
+
+
+<ul>
+  <li *ngFor="let item of array_item">
+    {{item}}
+  </li>
+</ul>
+
+<br>
+
+<app-su-dung-output
+  (click_btn)="HienThi()"
+>
+</app-su-dung-output>
