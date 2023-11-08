@@ -16,6 +16,7 @@ nên tôi chỉ lấy thư mục "src" thôi.
 1. tạo dự án mới: ng new <tên_dự_án>
 2. tạo component mới: ng generate component <tên_component>
 3. tạo service mới: ng generate service <tên_service>
+4. tạo module mới: ng generate module <tên_module>
 <br>
 Chú ý:
 <br>
