@@ -50,5 +50,5 @@ Chú ý:
 
 # Sử dụng *ngIf
 - bước 1: <div *ngIf="item.isSendPortal == true; then notification_send"></div>.
-- bước 2: <code> <ng-template #notification_send> <div>Đã gửi</div> </ng-template></code>.
+- bước 2: "<ng-template #notification_send> <div>Đã gửi</div> </ng-template>".
 - chú ý: nếu bạn không dùng <ng-template> thì bị báo lỗi đấy.
