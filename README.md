@@ -47,3 +47,8 @@ Chú ý:
 1. public status: boolean = true;
 2. console.log(!this.status); thì kết quả là "false"
 3. console.log(!!this.status); thì kết quả là "true"
+
+# Sử dụng *ngIf
+- bước 1: <div *ngIf="item.isSendPortal == true; then notification_send"></div>.
+- bước 2: <ng-template #notification_send> <div>Đã gửi</div> </ng-template>.
+- chú ý: nếu bạn không dùng <ng-template> thì bị báo lỗi đấy.
