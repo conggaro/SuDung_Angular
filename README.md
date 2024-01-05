@@ -52,3 +52,13 @@ Chú ý:
 - bước 1: <div *ngIf="item.isSendPortal == true; then notification_send"></div>.
 - bước 2: "<ng-template #notification_send> <div>Đã gửi</div> </ng-template>".
 - chú ý: nếu bạn không dùng <ng-template> thì bị báo lỗi đấy.
+
+# Trong file lib.dom.d.ts
+hàm btoa() là "binary to ASCII".<br>
+Đây là một hàm trong JavaScript được thiết kế để mã hóa dữ liệu nhị phân thành chuỗi ASCII sử dụng mã hóa Base64.
+
+<code>
+const originalString = 'Hello, World!';
+const encodedString = btoa(originalString);
+console.log(encodedString); // SGVsbG8sIFdvcmxkIQ==
+</code>
