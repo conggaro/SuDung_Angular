@@ -55,10 +55,19 @@ Chú ý:
 
 # Trong file lib.dom.d.ts
 Hàm btoa() là "binary to ASCII".<br>
-Đây là một hàm trong JavaScript được thiết kế để mã hóa dữ liệu nhị phân thành chuỗi ASCII sử dụng mã hóa Base64.<br>
+Đây là một hàm trong JavaScript được thiết kế để mã hóa "dữ liệu nhị phân" thành "chuỗi ASCII" sử dụng mã hóa Base64.<br>
 
 Ví dụ:<br>
 <code>const originalString = 'Hello, World!';
 const encodedString = btoa(originalString);
 console.log(encodedString); // SGVsbG8sIFdvcmxkIQ==
+</code>
+
+<br>
+Hàm atob() là "ASCII to binary".<br>
+Đây là một hàm trong JavaScript được thiết kế để mã hóa "chuỗi ASCII" thành "dữ liệu nhị phân" sử dụng mã hóa Base64.<br>
+<br>
+<code>const encodedString = 'SGVsbG8sIFdvcmxkIQ==';
+const decodedString = atob(encodedString);
+console.log(decodedString); // Hello, World!
 </code>
