@@ -54,8 +54,10 @@ Chú ý:
 - chú ý: nếu bạn không dùng <ng-template> thì bị báo lỗi đấy.
 
 # Trong file lib.dom.d.ts
+1. Hàm btoa()
+2. Hàm atob()
 
-1. Hàm btoa() là "binary to ASCII".<br>
+# Hàm btoa() là "binary to ASCII".<br>
 Đây là một hàm trong JavaScript được thiết kế để mã hóa "dữ liệu nhị phân" thành "chuỗi ASCII" sử dụng mã hóa Base64.<br>
 
 Ví dụ:<br>
@@ -65,7 +67,7 @@ console.log(encodedString); // SGVsbG8sIFdvcmxkIQ==
 </code>
 
 <br><br>
-2. Hàm atob() là "ASCII to binary".<br>
+# Hàm atob() là "ASCII to binary".<br>
 Đây là một hàm trong JavaScript được thiết kế để mã hóa "chuỗi ASCII" thành "dữ liệu nhị phân" sử dụng mã hóa Base64.<br>
 
 Ví dụ:<br>
