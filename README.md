@@ -54,9 +54,8 @@ Chú ý:
 - chú ý: nếu bạn không dùng <ng-template> thì bị báo lỗi đấy.
 
 # Trong file lib.dom.d.ts
-hàm btoa() là "binary to ASCII".<br>
-Đây là một hàm trong JavaScript được thiết kế để mã hóa dữ liệu nhị phân thành chuỗi ASCII sử dụng mã hóa Base64.
-
+Hàm btoa() là "binary to ASCII".<br>
+Đây là một hàm trong JavaScript được thiết kế để mã hóa dữ liệu nhị phân thành chuỗi ASCII sử dụng mã hóa Base64.<br>
 <code>
 const originalString = 'Hello, World!';
 const encodedString = btoa(originalString);
