@@ -1,0 +1,42 @@
+<form>
+    <label for="inp1">Nhập tên phần tử: </label>
+    <input type="text" name="inp1_name" id="inp1" [(ngModel)]="elementStr" (input)="onInputByUser()">
+    <button (click)="onClickButtonByUser()">Lưu</button>
+</form>
+
+<p>{{ elementStr }}</p>
+
+
+
+<form [formGroup]="form" (ngSubmit)="onSubmitFormByUser()">
+    <label for="inp2">Nhập họ tên: </label>
+    <input type="text" id="inp2" formControlName="fullName">
+    <button>Gửi</button>
+</form>
+
+
+
+<form>
+    <label for="inp3">Nhập ký tự: </label>
+    <input type="text" name="name_valueStr" id="inp3" [(ngModel)]="modelObj.valueStr">
+    <button (click)="onAddByUser()">Thêm</button>
+</form>
+
+<p> {{ modelObj | json }} </p>
+
+
+
+<form [formGroup]="myForm" (ngSubmit)="onCreateByUser()">
+    <label for="inp4">Nhập văn bản: </label>
+    <input type="text" id="inp4" formControlName="textStr">
+    <button>Tạo mới</button>
+</form>
+
+
+
+<h1>Danh sách:</h1>
+<ul>
+    <li *ngFor="let item of arrContext">
+        {{ item }}
+    </li>
+</ul>
