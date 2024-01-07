@@ -66,7 +66,6 @@ const encodedString = btoa(originalString);
 console.log(encodedString); // SGVsbG8sIFdvcmxkIQ==
 </code>
 
-<br><br>
 # Hàm atob() là "ASCII to binary".<br>
 Đây là một hàm trong JavaScript được thiết kế để mã hóa "chuỗi ASCII" thành "dữ liệu nhị phân" sử dụng mã hóa Base64.<br>
 
