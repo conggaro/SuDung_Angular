@@ -1,0 +1,33 @@
+<div id="overlay" (click)="onClickOverlay()" #myOverlay></div>
+
+<div id="pop-up">
+    <form>
+        <label for="inp1">Nhập tên tài khoản:</label>
+        <br>
+
+        <input type="text" name="username" id="inp1" [(ngModel)]="myFormModel.username" (input)="enterTextByUser()">
+        <br>
+
+        <label for="inp2">Nhập mật khẩu:</label>
+        <br>
+
+        <input type="password" name="password" id="inp2" [(ngModel)]="myFormModel.password" (input)="enterPasswordByUser()">
+        <br>
+
+        <button (click)="onClickSubmitForm($event)">Gửi</button>
+
+        <div id="group-radio">
+            Hiển thị myFormModel:
+
+            <input type="radio" name="radio_inp" id="inp3" (click)="onClickRadioTurnOn()" checked>
+            <label for="inp3">Bật</label>
+
+            <input type="radio" name="radio_inp" id="inp4" (click)="onClickRadioTurnOff()">
+            <label for="inp4">Tắt</label>
+        </div>
+
+        <div id="show-myFormModel" *ngIf="showJSON">
+            <pre>{{ myFormModel | json }}</pre>
+        </div>
+    </form>
+</div>

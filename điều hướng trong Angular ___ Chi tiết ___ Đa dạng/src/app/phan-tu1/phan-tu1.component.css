@@ -1,0 +1,16 @@
+div {
+    width: 600px;
+    height: 400px;
+    border: solid 5px rgb(0, 150, 255);
+    
+
+    /* thiết lập css cho chữ */
+    color: rgb(0, 150, 255);
+    font-size: 30px;
+    text-align: center;
+    line-height: 400px;
+}
+
+#this-is-div-1 {
+    margin-bottom: 20px;
+}

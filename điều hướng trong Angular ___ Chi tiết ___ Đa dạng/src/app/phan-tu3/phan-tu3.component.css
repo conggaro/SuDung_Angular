@@ -1,0 +1,71 @@
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#pop-up {
+    width: 20%;
+    min-width: 270px;
+    height: 40%;
+    background: white;
+    border-radius: 10px;
+    
+    position: fixed;
+    z-index: 3;
+    top: 30%;
+    left: 40%;
+
+    /*
+        tôi để  left: 40%
+        vì width: 20%
+
+        kiểu 40% + 20% + 40% = 100% chiều ngang ấy
+    */
+}
+
+form {
+    width: 250px;
+    margin: 20px auto;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#show-myFormModel {
+    margin-top: 40px;
+    word-wrap: break-word;
+}
+
+#group-radio {
+    margin-top: 40px;
+}
+
+input[type="radio"] {
+    width: auto;
+    cursor: pointer;
+}
+
+pre {
+    margin: 0px;
+    font-family: Consolas;
+    font-size: 16px;
+}
