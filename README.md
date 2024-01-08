@@ -80,7 +80,7 @@ Trong component A
 <code>
 this.router.navigate(['/destination-route'], { state: { data: yourData } });</code>
 <br><br>
-Trong component B (destination route - tuyến đường đích)
+Trong component B (destination route - tuyến đường đích)<br>
 <code>const receiveData: any = this.router.getCurrentNavigation()?.extras.state;
     if (!!receiveData) {
       &emsp;&emsp;&emsp;&emsp;console.log(receiveData.data);
