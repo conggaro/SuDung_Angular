@@ -74,3 +74,12 @@ Ví dụ:<br>
 const decodedString = atob(encodedString);
 console.log(decodedString); // Hello, World!
 </code>
+
+# Điều hướng và truyền dữ liệu
+<code>// Trong component A
+this.router.navigate(['/destination-route'], { state: { data: yourData } });</code>
+<br>
+<code>const receiveData: any = this.router.getCurrentNavigation()?.extras.state;
+    if (!!receiveData) {
+      console.log(receiveData.data);
+    }</code>
