@@ -78,7 +78,7 @@ console.log(decodedString); // Hello, World!
 # Điều hướng và truyền dữ liệu
 Trong component A<br>
 <code>const navigationExtras: NavigationExtras = {
-          state: { id: 1, fullName: "Nguyen Van A"}
+          &emsp;&emsp;&emsp;&emsp;state: { id: 1, fullName: "Nguyen Van A"}
         };
         this.router.navigate(["/profile"], navigationExtras);</code>
 <br><br>
