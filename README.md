@@ -85,5 +85,5 @@ Trong component A<br>
 Trong component B (destination route - tuyến đường đích)<br>
 <code>const receiveData: any = this.router.getCurrentNavigation()?.extras.state;
     if (!!receiveData) {
-      &emsp;&emsp;&emsp;&emsp;console.log(receiveData.data);
+      &emsp;&emsp;&emsp;&emsp;console.log(receiveData);
     }</code>
