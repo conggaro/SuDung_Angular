@@ -80,7 +80,7 @@ Trong component A<br>
 <code>const navigationExtras: NavigationExtras = {
           &emsp;&emsp;&emsp;&emsp;state: { id: 1, fullName: "Nguyen Van A"}
         };
-        this.router.navigate(["/profile"], navigationExtras);</code>
+        this.router.navigate(["/destination-route"], navigationExtras);</code>
 <br><br>
 Trong component B (destination route - tuyến đường đích)<br>
 <code>const receiveData: any = this.router.getCurrentNavigation()?.extras.state;
