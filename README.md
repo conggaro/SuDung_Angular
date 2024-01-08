@@ -82,5 +82,5 @@ this.router.navigate(['/destination-route'], { state: { data: yourData } });</co
 <code>// Trong component B (destination route - tuyến đường đích)
 const receiveData: any = this.router.getCurrentNavigation()?.extras.state;
     if (!!receiveData) {
-      console.log(receiveData.data);
+      &emsp;console.log(receiveData.data);
     }</code>
