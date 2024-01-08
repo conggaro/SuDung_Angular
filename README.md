@@ -76,13 +76,12 @@ console.log(decodedString); // Hello, World!
 </code>
 
 # Điều hướng và truyền dữ liệu
-// Trong component A
+Trong component A
 <code>
 this.router.navigate(['/destination-route'], { state: { data: yourData } });</code>
 <br><br>
-// Trong component B (destination route - tuyến đường đích)
-<code>
-const receiveData: any = this.router.getCurrentNavigation()?.extras.state;
+Trong component B (destination route - tuyến đường đích)
+<code>const receiveData: any = this.router.getCurrentNavigation()?.extras.state;
     if (!!receiveData) {
       &emsp;&emsp;&emsp;&emsp;console.log(receiveData.data);
     }</code>
