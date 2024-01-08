@@ -76,7 +76,7 @@ console.log(decodedString); // Hello, World!
 </code>
 
 # Điều hướng và truyền dữ liệu
-Trong component A
+Trong component A<br>
 <code>const navigationExtras: NavigationExtras = {
           state: { id: 1, fullName: "Nguyen Van A"}
         };
