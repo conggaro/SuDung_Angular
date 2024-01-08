@@ -77,11 +77,10 @@ console.log(decodedString); // Hello, World!
 
 # Điều hướng và truyền dữ liệu
 Trong component A
-<code>
-this.router.navigate(
-['/destination-route'],
-{ state: { data: { id: 1, name: "Nguyen Van A"} } }
-);</code>
+<code>const navigationExtras: NavigationExtras = {
+          state: { id: 1, fullName: "Nguyen Van A"}
+        };
+        this.router.navigate(["/profile"], navigationExtras);</code>
 <br><br>
 Trong component B (destination route - tuyến đường đích)<br>
 <code>const receiveData: any = this.router.getCurrentNavigation()?.extras.state;
