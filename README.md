@@ -87,3 +87,6 @@ Trong component B (destination route - tuyến đường đích)<br>
     if (!!receiveData) {
       &emsp;&emsp;&emsp;&emsp;console.log(receiveData);
     }</code>
+
+# URL
+<pre>http://gitlab.tinhvanconsulting.com/unb/webapp.git</pre>
