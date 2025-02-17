@@ -105,3 +105,6 @@ if (text.endsWith(".")) {
     text = text.slice(0, -1); // Cắt ký tự cuối nếu là '.'
 }
 console.log(text); // Output: "okkkk"</pre>
+
+# Câu lệnh để kiểm tra phiên bản mới nhất trong package.json
+npm outdated
