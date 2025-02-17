@@ -92,4 +92,4 @@ Trong component B (destination route - tuyến đường đích)<br>
 <pre>http://gitlab.tinhvanconsulting.com/unb/webapp.git</pre>
 
 # Nếu bạn muốn hiển thị 1 biến ra ngoài màn hình (giống như console log)
-<div [innerHTML]="model.text"></div>
+<pre><div [innerHTML]="model.text"></div></pre>
