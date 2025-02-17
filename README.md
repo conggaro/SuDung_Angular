@@ -102,6 +102,6 @@ let result = text.substring(0, 2);</pre>
 Cắt ký tự từ phải sang trái<br>
 <pre>let text = "okkkk.";
 if (text.endsWith(".")) {
-    text = text.slice(0, -4); // Cắt ký tự cuối nếu là '.'
+    text = text.slice(0, -1); // Cắt ký tự cuối nếu là '.'
 }
 console.log(text); // Output: "okkkk"</pre>
