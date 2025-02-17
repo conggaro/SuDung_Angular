@@ -93,3 +93,15 @@ Trong component B (destination route - tuyến đường đích)<br>
 
 # Nếu bạn muốn hiển thị 1 biến ra ngoài màn hình (giống như console log)
 <pre>&ltdiv [innerHTML]="model.text"&gt &lt/div&gt </pre>
+
+# Hàm cắt lát slice()
+Cắt ký tự từ trái sang phải<br>
+<pre>let text = "Hello world!";
+let result = text.substring(0, 2);</pre>
+<br>
+Cắt ký tự từ phải sang trái<br>
+<pre>let text = "okkkk.";
+if (text.endsWith(".")) {
+    text = text.slice(0, -4); // Cắt ký tự cuối nếu là '.'
+}
+console.log(text); // Output: "okkkk"</pre>
