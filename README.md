@@ -108,3 +108,7 @@ console.log(text); // Output: "okkkk"</pre>
 
 # Câu lệnh để kiểm tra phiên bản mới nhất trong package.json
 npm outdated
+
+# Khi thỏa mãn 1 điều kiện thì mới áp dụng class CSS trong angular
+<pre>[class.t7]="i === 5"</pre>
+nếu i bằng 5 thì sẽ trả về class="t7", "t7" là css thứ 7
