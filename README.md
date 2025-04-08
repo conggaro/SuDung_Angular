@@ -120,4 +120,4 @@ nếu i bằng 5 thì sẽ trả về class="t7", "t7" là css thứ 7
 <br>
 <div>code TypeScript</div>
 <pre>popup!: any; // đây là câu lệnh khai báo trong Class của code TypeScript</pre>
-<pre>this.popup = <HTMLInputElement>document.getElementById('popup1');</pre>
+<pre>this.popup = &ltHTMLInputElement>document.getElementById('popup1');</pre>
