@@ -112,3 +112,12 @@ npm outdated
 # Khi thỏa mãn 1 điều kiện thì mới áp dụng class CSS trong angular
 <pre>[class.t7]="i === 5"</pre>
 nếu i bằng 5 thì sẽ trả về class="t7", "t7" là css thứ 7
+
+# Lấy phần tử trong Angular
+<div>code HTML</div>
+<br>
+<pre><div id="popup1" class="overlay"></pre>
+<br>
+<div>code TypeScript</div>
+<pre>popup!: any;</pre>
+<pre>this.popup = <HTMLInputElement>document.getElementById('popup1');</pre>
