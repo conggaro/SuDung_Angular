@@ -140,3 +140,36 @@ array[0].name = "Charlie";
 // Ghi log phần tử index = 0 và biến test
 console.log("Phần tử index = 0:", array[0]);
 console.log("Biến test:", test);</pre>
+
+# Cách clone đối tượng để không bị tham chiếu
+Cách 1:
+<pre>const array = [
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" }
+];
+
+// Gán phần tử index = 0 cho biến test mà không tham chiếu
+let test = Object.assign({}, array[0]);
+
+// Sửa đổi thuộc tính name của phần tử index = 0
+array[0].name = "Charlie";
+
+// Ghi log phần tử index = 0 và biến test
+console.log("Phần tử index = 0:", array[0]);
+console.log("Biến test:", test);</pre>
+<br>
+Cách 2:
+<pre>const array = [
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" }
+];
+
+// Gán phần tử index = 0 cho biến test mà không tham chiếu
+let test = { ...array[0] };
+
+// Sửa đổi thuộc tính name của phần tử index = 0
+array[0].name = "Charlie";
+
+// Ghi log phần tử index = 0 và biến test
+console.log("Phần tử index = 0:", array[0]);
+console.log("Biến test:", test);</pre>
