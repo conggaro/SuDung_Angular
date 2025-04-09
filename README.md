@@ -121,3 +121,22 @@ nếu i bằng 5 thì sẽ trả về class="t7", "t7" là css thứ 7
 <div>code TypeScript</div>
 <pre>popup!: any; // đây là câu lệnh khai báo trong Class của code TypeScript</pre>
 <pre>this.popup = &ltHTMLInputElement>document.getElementById('popup1');</pre>
+
+# Biến tham chiếu
+<pre>// Khởi tạo mảng với 2 phần tử
+const array = [
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" }
+];
+
+console.log("Phần tử index = 0:", array[0]);
+
+// Gán phần tử index = 0 cho biến test
+let test = array[0];
+
+// Sửa đổi thuộc tính name của phần tử index = 0
+array[0].name = "Charlie";
+
+// Ghi log phần tử index = 0 và biến test
+console.log("Phần tử index = 0:", array[0]);
+console.log("Biến test:", test);</pre>
