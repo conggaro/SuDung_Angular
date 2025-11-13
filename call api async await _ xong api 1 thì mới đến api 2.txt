@@ -1,0 +1,26 @@
+import { HttpClient } from '@angular/common/http';
+import { firstValueFrom } from 'rxjs';
+
+
+
+constructor(
+        private http: HttpClient
+    ) {
+  
+    }
+
+
+// Gọi API 1 trước, sau đó gọi API 2
+    async fetchDataSequentially() {
+        try {
+        const result1 = await firstValueFrom(this.http.get('/api/AtRegisterLeave/Test1'));
+        console.log("test 123", result1);
+
+        // Gọi API 2 với tham số từ kết quả API 1
+        const result2 = await firstValueFrom(this.http.get(`/api/AtRegisterLeave/Test2`));
+        
+        this.data = { result1, result2 };
+        } catch (error) {
+        console.error('Error fetching data:', error);
+        }
+    }
