@@ -1,0 +1,52 @@
+// mặc dù call api cùng lúc
+    // nếu đặt debug ở api thứ 1
+    // thì api thứ 2
+    // fetchData() {
+    //     // Gọi cả hai API cùng lúc
+    //     forkJoin([
+    //         this.http.get('/api/AtRegisterLeave/Test1'),
+    //         this.http.get('/api/AtRegisterLeave/Test2')
+    //     ]).subscribe(
+    //         {
+    //             next: (results) => {
+    //                 this.data = results; // { 0: data1, 1: data2 }
+    //             },
+    //             error: (error) => {
+    //                 console.error('Error fetching data:', error);
+    //             }
+    //         }
+    //     );
+    // }
+
+    
+    // cũng call 2 api giống forkJoin
+    // không bị đợi api phía trước
+    // fetchData() {
+    //     combineLatest([
+    //         this.http.get('/api/AtRegisterLeave/Test1'),
+    //         this.http.get('/api/AtRegisterLeave/Test2')
+    //     ]).subscribe({
+    //         next: (results) => {
+    //             this.data = results; // [{...data1}, {...data2}]
+    //         },
+    //         error: (error) => {
+    //             console.error('Error fetching data:', error);
+    //         }
+    //     });
+    // }
+
+
+    // cũng call được 2 api cùng lúc
+    // fetchData() {
+    //     zip(
+    //         this.http.get('/api/AtRegisterLeave/Test1'),
+    //         this.http.get('/api/AtRegisterLeave/Test2')
+    //     ).subscribe({
+    //         next: (results) => {
+    //             this.data = results; // [{...data1}, {...data2}]
+    //         },
+    //         error: (error) => {
+    //             console.error('Error fetching data:', error);
+    //         }
+    //     });
+    // }
