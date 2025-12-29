@@ -173,3 +173,23 @@ array[0].name = "Charlie";
 // Ghi log phần tử index = 0 và biến test
 console.log("Phần tử index = 0:", array[0]);
 console.log("Biến test:", test);</pre>
+
+# Thư viện quan trọng trong Angular _ @angular/cdk _ Angular Component Dev Kit
+<pre>Thư viện angular cdk là gì
+
+Angular CDK (Component Dev Kit)
+là một bộ công cụ mạnh mẽ giúp các nhà phát triển
+xây dựng các thành phần giao diện (UI components) tùy chỉnh
+cho ứng dụng Angular,
+cung cấp các tính năng cấp thấp như quản lý overlay (popup, tooltip),
+kéo-thả (drag-drop),
+cuộn ảo (virtual scrolling) cho danh sách lớn,
+truy cập khả dụng (accessibility)
+và nhiều hơn nữa,
+giúp bạn không cần phải tự xây dựng lại từ đầu các chức năng phức tạp
+mà vẫn giữ được sự linh hoạt và kiểm soát cao</pre>
+
+trong quá trình code mà cần hàm inject()
+thì thêm đoạn code này vào
+<br>
+<pre>import { inject } from '@angular/core';</pre>
