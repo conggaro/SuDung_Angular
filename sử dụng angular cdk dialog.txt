@@ -1,0 +1,47 @@
+bước 1:
+trong component cha
+import { Dialog } from '@angular/cdk/dialog';
+import { CustomizeModalComponent } from '../customize-modal/customize-modal.component'
+
+// CustomizeModalComponent là component có thể tự thêm được bằng cách ng g c CustomizeModalComponent
+
+xong r viết cái này
+
+// chèn vào vào hệ thống
+  private dialog = inject(Dialog);
+
+  // bật hộp thoại
+  protected openModal() {
+    this.dialog.open(CustomizeModalComponent, { disableClose: true });
+  }
+
+  xong rồi vào file html thêm button như này
+  <!-- bây giờ chế 1 cái nút bấm -->
+<button (click)="openModal()">bấm vào đây để kiểm tra hệ thống</button>
+
+
+
+bước 2:
+vào file ts của CustomizeModalComponent
+
+import { Component, inject } from '@angular/core';
+import { DialogRef } from '@angular/cdk/dialog';
+
+@Component({
+  selector: 'app-customize-modal',
+  imports: [],
+  templateUrl: './customize-modal.component.html',
+  styleUrl: './customize-modal.component.scss'
+})
+export class CustomizeModalComponent {
+  private dialogRef = inject(DialogRef, { optional: true });
+
+  protected closeModal() {
+    this.dialogRef?.close();
+  }
+}
+
+
+xong rồi ra file .html của CustomizeModalComponent
+<p>hệ thống đang quét local storage</p>
+<button (click)="closeModal()">Đóng</button>
