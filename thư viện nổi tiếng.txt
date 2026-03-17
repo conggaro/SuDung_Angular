@@ -130,3 +130,160 @@ Nếu:
 showTable = false → true
 
 table render lại → onLazyLoad.
+
+
+
+
+
+
+Các trường hợp chắc chắn gây onLazyLoad
+1️⃣ Render table lần đầu
+
+Khi component hiển thị lần đầu.
+
+Điều kiện:
+
+[lazy]="true"
+
+Flow:
+
+p-table init
+   ↓
+PrimeNG detect lazy mode
+   ↓
+emit onLazyLoad
+
+Event:
+
+{
+  first: 0,
+  rows: rows
+}
+2️⃣ Đổi trang (pagination)
+
+Do bạn bật:
+
+[paginator]="paginator"
+
+Khi user click:
+
+page 1 → page 2
+
+PrimeNG sẽ emit:
+
+onLazyLoad({
+  first: 10,
+  rows: 10
+})
+3️⃣ Thay đổi số dòng mỗi trang
+
+Do bạn có:
+
+[rowsPerPageOptions]="rowsPerPageOptions"
+
+User đổi:
+
+10 rows → 20 rows
+
+PrimeNG emit:
+
+onLazyLoad
+
+Event:
+
+{
+  first: 0,
+  rows: 20
+}
+4️⃣ Sort column
+
+Bạn có:
+
+[sortMode]="'single'"
+(onSort)="onSort($event)"
+
+Nếu column có:
+
+pSortableColumn
+
+Khi user click header:
+
+Name ↑
+Name ↓
+
+PrimeNG sẽ:
+
+emit onSort
+emit onLazyLoad
+
+Event:
+
+{
+  sortField: "name",
+  sortOrder: 1
+}
+5️⃣ Khi bạn thay đổi first từ code
+
+Bạn bind:
+
+[first]="first"
+
+Nếu trong code:
+
+this.first = 0;
+
+table sẽ:
+
+update state
+→ emit onLazyLoad
+6️⃣ Khi thay đổi rows
+
+Bạn bind:
+
+[rows]="rows"
+
+Nếu:
+
+this.rows = 20;
+
+PrimeNG sẽ reload:
+
+onLazyLoad
+7️⃣ Khi reset table
+
+Ví dụ:
+
+this.table.reset();
+
+PrimeNG sẽ:
+
+first = 0
+filters = null
+sort = null
+→ emit onLazyLoad
+Những cái KHÔNG gây onLazyLoad
+
+Các property này không trigger:
+
+[value]
+[(selection)]
+(selectionChange)
+dataKey
+
+Ví dụ:
+
+[(selection)]="selectedRows"
+
+chỉ update selection, không reload data.
+
+Tóm tắt toàn bộ
+Trigger	Có gọi onLazyLoad
+Table render lần đầu	✅
+Pagination	✅
+Rows per page change	✅
+Sort column	✅
+Change first	✅
+Change rows	✅
+Reset table	✅
+Change selection	❌
+Change value	❌
