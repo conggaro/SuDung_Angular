@@ -17,3 +17,116 @@ Sort column	✅
 Filter column	✅
 Reset table	✅
 Render lại table	✅
+
+
+
+1️⃣ Khi table render lần đầu
+
+Ngay khi component hiển thị lần đầu.
+
+<p-table
+  [value]="data"
+  [lazy]="true"
+  (onLazyLoad)="loadData($event)">
+</p-table>
+
+Flow:
+
+Table render
+   ↓
+PrimeNG detect lazy mode
+   ↓
+emit onLazyLoad
+   ↓
+loadData(event)
+
+Event trả về dạng:
+
+{
+  first: 0,
+  rows: 10,
+  sortField: null,
+  sortOrder: null,
+  filters: {}
+}
+2️⃣ Khi user đổi trang (pagination)
+
+Khi dùng paginator:
+
+[paginator]="true"
+
+User bấm:
+
+page 1 → page 2
+
+p-table sẽ emit:
+
+onLazyLoad
+
+event ví dụ:
+
+{
+  first: 10,
+  rows: 10
+}
+3️⃣ Khi sort column
+
+Nếu column có:
+
+<p-column field="name" [sortable]="true"></p-column>
+
+User click header:
+
+Name ↑
+Name ↓
+
+p-table sẽ emit onLazyLoad
+
+event:
+
+{
+  sortField: "name",
+  sortOrder: 1
+}
+4️⃣ Khi filter column
+
+Nếu có filter:
+
+<p-column field="name" filter></p-column>
+
+User nhập filter → emit onLazyLoad.
+
+event:
+
+{
+  filters: {
+    name: { value: "abc", matchMode: "contains" }
+  }
+}
+5️⃣ Khi reset table / change state
+
+Một số action cũng trigger:
+
+gọi table.reset()
+
+thay đổi [rows]
+
+thay đổi [first]
+
+thay đổi [filters]
+
+thay đổi [sortField]
+
+6️⃣ Khi table bị destroy và render lại
+
+Ví dụ:
+
+<div *ngIf="showTable">
+  <p-table ...>
+</div>
+
+Nếu:
+
+showTable = false → true
+
+table render lại → onLazyLoad.
