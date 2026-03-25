@@ -1,0 +1,315 @@
+bài toán
+khi thêm mới thì 1 kiểu $sections
+khi sửa thì 1 kiểu $sections
+
+
+giải pháp dùng signal
+và computed trong angular
+từ phiên bản angular 18 trở lên
+code này đang ở 2026
+
+import { computed, signal } from '@angular/core';
+
+
+
+định nghĩa
+đây là khi tạo phòng ban dưới phòng ban
+CreateOrgUnderOrg
+
+đây là khi tạo phòng ban gốc CreateRootOrg
+$domOCreateMode = signal<'CreateOrgUnderOrg' | 'CreateRootOrg'>('CreateOrgUnderOrg');
+
+
+
+$sections = computed<ICoreFormSection[]>(() => {
+    const mode = this.$domOCreateMode();
+    if (mode === 'CreateOrgUnderOrg') {
+      return [
+        {
+          caption: 'UI_SECTION_GROUP_DOM_O',
+          rows: [
+            [
+              {
+                flexSize: 0,
+                label: EnumTranslateKey.UI_ENTITY_FIELD_CAPTION_COMMON_ID,
+                field: 'id',
+                value: '',
+                controlType: EnumFormBaseContolType.TEXTBOX,
+                readonly: true,
+                hidden: true,
+                type: 'text'
+              },
+              {
+                flexSize: 6,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_ORIGINAL_NAME",
+                field: 'originalName',
+                value: "",
+                controlType: EnumFormBaseContolType.TEXTBOX,
+                type: 'text',
+                validators: [
+                  {
+                    name: 'required',
+                    validator: Validators.required,
+                    errorMessage: EnumTranslateKey.UI_FORM_CONTROL_ERROR_REQUIRED,
+                  },
+                  {
+                    name: 'minLength',
+                    validator: Validators.minLength(3),
+                    errorMessage: EnumTranslateKey.UI_FORM_CONTROL_ERROR_MIN_LENGTH,
+                  }
+                ]
+              },
+              {
+                flexSize: 6,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_CODE",
+                field: 'code',
+                value: "",
+                controlType: EnumFormBaseContolType.AUTO_CODE,
+                type: 'text',
+                validators: [
+                  {
+                    name: 'required',
+                    validator: Validators.required,
+                    errorMessage: EnumTranslateKey.UI_FORM_CONTROL_ERROR_REQUIRED,
+                  },
+                  {
+                    name: 'minLength',
+                    validator: Validators.minLength(3),
+                    errorMessage: EnumTranslateKey.UI_FORM_CONTROL_ERROR_MIN_LENGTH,
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                flexSize: 6,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_AVAILABLE_UTC",
+                field: 'availableUtc',
+                value: null,
+                controlType: EnumFormBaseContolType.DATEPICKER,
+                $rangePoint: 'start',
+                type: 'Date',
+                validators: [
+                  {
+                    name: 'required',
+                    validator: Validators.required,
+                    errorMessage: EnumTranslateKey.UI_FORM_CONTROL_ERROR_REQUIRED,
+                  }
+                ]
+              },
+              {
+                flexSize: 6,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_TIMEZONE_ID",
+                field: 'bTimezoneId',
+                value: null,
+                controlType: EnumFormBaseContolType.TIMEZONE_ID,
+                type: 'text',
+                validators: [
+                  {
+                    name: 'required',
+                    validator: Validators.required,
+                    errorMessage: EnumTranslateKey.UI_FORM_CONTROL_ERROR_REQUIRED,
+                  }
+                ]
+              },
+            ],
+          ]
+        },
+        {
+          caption: 'UI_SECTION_GROUP_DOM_O_O',
+          rows: [
+            [
+              {
+                flexSize: 4,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_O_A_ID",
+                field: 'aId',
+                value: null,
+                controlType: EnumFormBaseContolType.DOM_O_VIEWER,
+                type: 'string',
+                disabled: true,
+              },
+            ],
+            [
+              {
+                flexSize: 4,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_O_VF_UTC",
+                field: 'vfUtc',
+                value: null,
+                controlType: EnumFormBaseContolType.DATEPICKER,
+                $rangePoint: 'start',
+                timezoneFieldInForm: 'relationTimezoneId',
+                type: 'Date',
+              },
+              {
+                flexSize: 4,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_O_VT_UTC",
+                field: 'vtUtc',
+                value: null,
+                controlType: EnumFormBaseContolType.DATEPICKER,
+                $rangePoint: 'start',
+                timezoneFieldInForm: 'relationTimezoneId',
+                type: 'Date',
+              },
+              {
+                flexSize: 4,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_O_TIMEZONE_ID",
+                field: 'relationTimezoneId',
+                value: null,
+                controlType: EnumFormBaseContolType.TIMEZONE_ID,
+                $rangePoint: 'start',
+                type: 'Date',
+              },
+            ]
+          ]
+        },
+      ];
+    }
+    else {
+      return [
+        {
+          caption: 'UI_SECTION_GROUP_DOM_O',
+          rows: [
+            [
+              {
+                flexSize: 0,
+                label: EnumTranslateKey.UI_ENTITY_FIELD_CAPTION_COMMON_ID,
+                field: 'id',
+                value: '',
+                controlType: EnumFormBaseContolType.TEXTBOX,
+                readonly: true,
+                hidden: true,
+                type: 'text'
+              },
+              {
+                flexSize: 6,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_ORIGINAL_NAME",
+                field: 'originalName',
+                value: "",
+                controlType: EnumFormBaseContolType.TEXTBOX,
+                type: 'text',
+                validators: [
+                  {
+                    name: 'required',
+                    validator: Validators.required,
+                    errorMessage: EnumTranslateKey.UI_FORM_CONTROL_ERROR_REQUIRED,
+                  },
+                  {
+                    name: 'minLength',
+                    validator: Validators.minLength(3),
+                    errorMessage: EnumTranslateKey.UI_FORM_CONTROL_ERROR_MIN_LENGTH,
+                  }
+                ]
+              },
+              {
+                flexSize: 6,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_CODE",
+                field: 'code',
+                value: "",
+                controlType: EnumFormBaseContolType.AUTO_CODE,
+                type: 'text',
+                validators: [
+                  {
+                    name: 'required',
+                    validator: Validators.required,
+                    errorMessage: EnumTranslateKey.UI_FORM_CONTROL_ERROR_REQUIRED,
+                  },
+                  {
+                    name: 'minLength',
+                    validator: Validators.minLength(3),
+                    errorMessage: EnumTranslateKey.UI_FORM_CONTROL_ERROR_MIN_LENGTH,
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                flexSize: 6,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_AVAILABLE_UTC",
+                field: 'availableUtc',
+                value: null,
+                controlType: EnumFormBaseContolType.DATEPICKER,
+                $rangePoint: 'start',
+                type: 'Date',
+                validators: [
+                  {
+                    name: 'required',
+                    validator: Validators.required,
+                    errorMessage: EnumTranslateKey.UI_FORM_CONTROL_ERROR_REQUIRED,
+                  }
+                ]
+              },
+              {
+                flexSize: 6,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_TIMEZONE_ID",
+                field: 'bTimezoneId',
+                value: null,
+                controlType: EnumFormBaseContolType.TIMEZONE_ID,
+                type: 'text',
+                validators: [
+                  {
+                    name: 'required',
+                    validator: Validators.required,
+                    errorMessage: EnumTranslateKey.UI_FORM_CONTROL_ERROR_REQUIRED,
+                  }
+                ]
+              },
+            ],
+            [
+              {
+                flexSize: 4,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_O_VF_UTC",
+                field: 'vfUtc',
+                value: null,
+                controlType: EnumFormBaseContolType.DATEPICKER,
+                $rangePoint: 'start',
+                timezoneFieldInForm: 'relationTimezoneId',
+                type: 'Date',
+              },
+              {
+                flexSize: 4,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_O_VT_UTC",
+                field: 'vtUtc',
+                value: null,
+                controlType: EnumFormBaseContolType.DATEPICKER,
+                $rangePoint: 'start',
+                timezoneFieldInForm: 'relationTimezoneId',
+                type: 'Date',
+              },
+              {
+                flexSize: 4,
+                label: "UI_ENTITY_FIELD_CAPTION_DOM_O_O_TIMEZONE_ID",
+                field: 'relationTimezoneId',
+                value: null,
+                controlType: EnumFormBaseContolType.TIMEZONE_ID,
+                $rangePoint: 'start',
+                type: 'Date',
+              },
+            ]
+          ]
+        }
+      ];
+    }
+  });
+
+
+
+
+
+khi sửa $domOCreateMode
+thì cái $sections này tự chuyển đổi value bên trong
+theo định nghĩa if else lúc khai báo
+
+
+
+ví dụ như đoạn code này
+if (params.get('id') === "0") {
+          this.$domOCreateMode.set('CreateRootOrg');
+        }
+        else {
+          if (this.aId) this.fetchParentOrg(this.aId);
+          this.$domOCreateMode.set('CreateOrgUnderOrg');
+        }
+
+
+nó đang sửa giá trị cho $domOCreateMode
+this.$domOCreateMode.set('CreateRootOrg');
